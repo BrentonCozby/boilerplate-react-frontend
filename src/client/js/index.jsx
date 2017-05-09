@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'development') {
     require('../../views/pages/index.pug')
 
     // partials
-    require('../../views/partials/layout.pug')
+    require('../../views/layout.pug')
     require('../../views/partials/head.pug')
 }
 
