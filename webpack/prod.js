@@ -9,7 +9,7 @@ import ResourceHintsPlugin from 'resource-hints-webpack-plugin'
 import FaviconsPlugin from 'favicons-webpack-plugin'
 import { resolve } from 'path'
 
-import { Dir, rootUrl } from '../config.js'
+import { Dir, rootUrl, title } from '../config.js'
 
 export default {
     entry: {
@@ -70,7 +70,23 @@ export default {
         ]
     },
     plugins: [
-        new FaviconsPlugin(resolve(Dir.images, 'TL-logo-blackbg.png')),
+	new FaviconsPlugin({
+            logo: resolve(Dir.images, 'react-icon.png'),
+            background: '#333',
+            title: title,
+            icons: {
+                android: true,
+                appleIcon: true,
+                appleStartup: true,
+                coast: false,
+                favicons: true,
+                firefox: true,
+                opengraph: true,
+                twitter: true,
+                yandex: false,
+                windows: true
+            }
+        }),
         new ExtractTextPlugin('style.[chunkhash].css'),
         new optimize.CommonsChunkPlugin({
             name: 'vendor',

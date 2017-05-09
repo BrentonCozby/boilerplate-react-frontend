@@ -8,7 +8,7 @@ import merge from 'webpack-merge'
 import HtmlPlugin from 'html-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 
-import { Dir, rootUrl } from '../config.js'
+import { Dir, rootUrl, title, description, site_url } from '../config.js'
 import devConfig from './dev.js'
 import prodConfig from './prod.js'
 
@@ -44,16 +44,15 @@ let common = {
     plugins: [
         new HtmlPlugin({
             filename: 'index.html',
-            template: resolve(Dir.views, 'pages', 'index.pug')
+            template: resolve(Dir.views, 'pages', 'index.pug'),
+            title,
+            description,
+            site_url
         }),
         new DefinePlugin({
             'process.env': {
                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
             }
-        }),
-        new ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
         }),
         new CopyPlugin([
             {from: resolve(Dir.client, 'humans.txt')},
