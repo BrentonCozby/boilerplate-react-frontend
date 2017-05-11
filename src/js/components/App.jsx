@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { rootUrl } from '../../../../config.js'
+import { rootUrl } from '../../../config.js'
 
 import Menu from './Menu.jsx'
 import NoMatch from './NoMatch.jsx'

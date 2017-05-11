@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { AppContainer as ReactHotLoader } from 'react-hot-loader'
 
-import { rootUrl } from '../../../config.js'
+import { rootUrl } from '../../config.js'
 import configStore from './store.js'
 import App from './components/App.jsx'
 import '../scss/index.scss'
@@ -12,11 +12,11 @@ import '../scss/index.scss'
 // import views so they can live-reload during development
 if (process.env.NODE_ENV === 'development') {
     // pages
-    require('../../views/pages/index.pug')
+    require('../views/pages/index.pug')
 
     // partials
-    require('../../views/layout.pug')
-    require('../../views/partials/head.pug')
+    require('../views/layout.pug')
+    require('../views/partials/head.pug')
 }
 
 const store = configStore()

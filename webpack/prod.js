@@ -15,7 +15,7 @@ export default {
     entry: {
         bundle: [
             'babel-polyfill',
-            resolve(Dir.client, 'js', 'index.jsx')
+            resolve(Dir.src, 'js', 'index.jsx')
         ]
     },
     output: {
@@ -34,7 +34,7 @@ export default {
                         presets: [
                             ['env', {modules: false}],
                             'react',
-                            'stage-2'
+                            'stage-0'
                         ]
                     }
                 }]
@@ -52,14 +52,13 @@ export default {
                     ]
                 })
             }, {
-                test: /\.(jpe?g|png|gif|svg|ico)$/,
+                test: /\.(jpg|jpeg|png|gif|svg|ico)$/,
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
                             limit: 40000,
-                            name: '[name].[ext]',
-                            outputPath: 'images/'
+                            name: '[path][name].[ext]'
                         }
                     }, {
                         loader: 'image-webpack-loader',
@@ -71,7 +70,7 @@ export default {
     },
     plugins: [
 	new FaviconsPlugin({
-            logo: resolve(Dir.images, 'react-icon.png'),
+            logo: resolve(Dir.images, 'react-logo.png'),
             background: '#333',
             title: title,
             icons: {
@@ -87,7 +86,7 @@ export default {
                 windows: true
             }
         }),
-        new ExtractTextPlugin('style.[chunkhash].css'),
+        new ExtractTextPlugin('css/style.[chunkhash].css'),
         new optimize.CommonsChunkPlugin({
             name: 'vendor',
             minChunks: function (module) {

@@ -28,8 +28,7 @@ let common = {
                     loader: 'url-loader',
                     options: {
                         limit: 100000,
-                        name: '[name].[ext]',
-                        outputPath: 'fonts/'
+                        name: '[path][name].[ext]'
                     }
                 }
             }, {
@@ -55,8 +54,8 @@ let common = {
             }
         }),
         new CopyPlugin([
-            {from: resolve(Dir.client, 'humans.txt')},
-            {from: resolve(Dir.client, 'robots.txt')}
+            {from: resolve(Dir.src, 'humans.txt')},
+            {from: resolve(Dir.src, 'robots.txt')}
         ])
     ],
     resolve: {

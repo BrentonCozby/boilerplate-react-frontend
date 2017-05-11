@@ -1,9 +1,9 @@
-export function getOneThing() {
+export function getOneThing(thing) {
     return dispatch => {
         setTimeout(function() {
             dispatch({
                 type: 'GET_ONE_THING',
-                payload: 'this is the thing'
+                payload: thing
             })
         }, 100)
     }
