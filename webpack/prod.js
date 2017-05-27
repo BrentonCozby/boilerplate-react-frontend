@@ -13,6 +13,16 @@ import { Dir, rootUrl, title } from '../config.js'
 
 export default {
     entry: {
+        vendor: [
+            'react',
+            'classnames',
+            'react-dom',
+            'react-redux',
+            'react-router-dom',
+            'redux',
+            'redux-promise',
+            'redux-thunk'
+        ],
         bundle: [
             'babel-polyfill',
             resolve(Dir.src, 'js', 'index.jsx')
@@ -89,9 +99,7 @@ export default {
         new ExtractTextPlugin('css/style.[chunkhash].css'),
         new optimize.CommonsChunkPlugin({
             name: 'vendor',
-            minChunks: function (module) {
-              return module.context && module.context.indexOf('node_modules') !== -1;
-            }
+            minChunks: Infinity
         }),
         new optimize.CommonsChunkPlugin({
             name: 'manifest',
