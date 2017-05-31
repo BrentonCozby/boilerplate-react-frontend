@@ -5,10 +5,6 @@
 
     Brenton Cozby -- Developer -- @BrentonCozby
 
-# THANKS
-
-    Stephen Grider for his Udemy course on React-Redux
-
 # TECHNOLOGY COLOPHON
 
     HTML5,
@@ -16,6 +12,4 @@
     React,
     Redux,
     Webpack,
-    Pug,
-    Froala,
-    Firebase
+    Pug
