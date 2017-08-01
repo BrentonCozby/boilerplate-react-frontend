@@ -4,7 +4,7 @@ import {
     NamedModulesPlugin
 } from 'webpack'
 
-import { Dir, rootUrl } from '../config.js'
+import { Dir, PUBLIC_PATH } from '../config.js'
 
 export default {
     entry: {
@@ -59,7 +59,7 @@ export default {
     devServer : {
         hot: true,
         contentBase: Dir.dist,
-        publicPath: rootUrl,
+        publicPath: PUBLIC_PATH,
         historyApiFallback: true
     },
     devtool: 'eval'

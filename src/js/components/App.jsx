@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { rootUrl } from '../../../config.js'
+import { PUBLIC_PATH } from '../../../config.js'
 
 import Menu from './Menu.jsx'
 import NoMatch from './NoMatch.jsx'
@@ -13,7 +13,7 @@ class App extends Component {
             <div className="App">
                 <Menu />
                 <Switch>
-                    <Route exact path={`${rootUrl}/`} component={Home} />
+                    <Route exact path={`${PUBLIC_PATH}/`} component={Home} />
                     <Route component={NoMatch}/>
                 </Switch>
                 <Footer />

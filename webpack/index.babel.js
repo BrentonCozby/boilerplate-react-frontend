@@ -8,7 +8,7 @@ import merge from 'webpack-merge'
 import HtmlPlugin from 'html-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 
-import { Dir, rootUrl, title, description, site_url } from '../config.js'
+import { Dir, PUBLIC_PATH, SITE_TITLE, DESCRIPTION, SITE_URL } from '../config.js'
 import devConfig from './dev.js'
 import prodConfig from './prod.js'
 
@@ -18,7 +18,7 @@ const env = (TARGET === 'dev') ? 'dev' : 'prod'
 let common = {
     output: {
         path: Dir.dist,
-        publicPath: rootUrl
+        publicPath: PUBLIC_PATH
     },
     module: {
         rules: [
@@ -44,9 +44,9 @@ let common = {
         new HtmlPlugin({
             filename: 'index.html',
             template: resolve(Dir.views, 'pages', 'index.pug'),
-            title,
-            description,
-            site_url
+            SITE_TITLE,
+            DESCRIPTION,
+            SITE_URL
         }),
         new DefinePlugin({
             'process.env': {
@@ -55,7 +55,8 @@ let common = {
         }),
         new CopyPlugin([
             {from: resolve(Dir.src, 'humans.txt')},
-            {from: resolve(Dir.src, 'robots.txt')}
+            {from: resolve(Dir.src, 'robots.txt')},
+            {from: resolve(Dir.src, '.htaccess')}
         ])
     ],
     resolve: {

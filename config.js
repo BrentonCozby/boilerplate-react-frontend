@@ -1,18 +1,21 @@
 import { resolve } from 'path'
 
-export const rootUrl = (process.env.NODE_ENV === 'production')
-    ? '/'
-    : '/'
+export const DEV_PATH = __dirname
+export const PUBLIC_PATH = '/'
 
-export const title = 'React Frontend Boilerplate'
-export const description = 'Boilerplate for a frontend react project'
-export const site_url = 'example.com'
+export const SITE_TITLE = 'React Frontend Boilerplate'
+export const SITE_NAME = 'ejs-sass-static-boilerplate'
+export const DESCRIPTION = 'Boilerplate for a frontend react project'
+export const SITE_URL = 'example.com'
+export const DEVELOPER_NAME = 'Brenton Cozby'
+export const DEVELOPER_URL = 'https://brentoncozby.com'
 
 export const Dir = {
     src: resolve(__dirname, 'src'),
+    dist: resolve(__dirname, 'dist'),
     views: resolve(__dirname, 'src', 'views'),
     pages: resolve(__dirname, 'src', 'views', 'pages'),
-    dist: resolve(__dirname, 'dist'),
+    partials: resolve(__dirname, 'src', 'views', 'partials'),
     assets: resolve(__dirname, 'assets'),
     images: resolve(__dirname, 'assets', 'images')
 }

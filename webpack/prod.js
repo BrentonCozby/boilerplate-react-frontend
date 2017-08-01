@@ -3,13 +3,12 @@ import {
     optimize
 } from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import ChunkManifestPlugin from "chunk-manifest-webpack-plugin"
 import WebpackChunkHash from "webpack-chunk-hash"
 import ResourceHintsPlugin from 'resource-hints-webpack-plugin'
 import FaviconsPlugin from 'favicons-webpack-plugin'
 import { resolve } from 'path'
 
-import { Dir, rootUrl, title } from '../config.js'
+import { Dir, SITE_TITLE } from '../config.js'
 
 export default {
     entry: {
@@ -70,9 +69,6 @@ export default {
                             limit: 40000,
                             name: '[path][name].[ext]'
                         }
-                    }, {
-                        loader: 'image-webpack-loader',
-                        options: {}
                     }
                 ]
             }
@@ -82,7 +78,7 @@ export default {
 	new FaviconsPlugin({
             logo: resolve(Dir.images, 'react-logo.png'),
             background: '#333',
-            title: title,
+            title: SITE_TITLE,
             icons: {
                 android: true,
                 appleIcon: true,
@@ -105,12 +101,6 @@ export default {
             name: 'manifest',
             minChunks: Infinity
         }),
-        new ChunkManifestPlugin({
-            filename: "chunk-manifest.json",
-            manifestVariable: "webpackManifest"
-        }),
-        new ResourceHintsPlugin(),
-        new HashedModuleIdsPlugin(),
-        new WebpackChunkHash()
+        new ResourceHintsPlugin()
     ]
 }

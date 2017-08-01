@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import classnames from 'classnames'
 import { Link } from 'react-router-dom'
 
-import { rootUrl } from '../../../config.js'
-
 class Menu extends Component {
 
     static contextTypes = {
