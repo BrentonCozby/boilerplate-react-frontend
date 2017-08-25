@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classnames from 'classnames'
 import { Link } from 'react-router-dom'
+import View from './view.jsx'
 
 class Menu extends Component {
 
@@ -23,20 +24,17 @@ class Menu extends Component {
             'close': this.state.isMenuVisible
         })
         const menuClasses = classnames({
-            'menu-button': true,
+            'Menu': true,
             'visible': this.state.isMenuVisible
         })
         return (
-            <div>
-                <div className={menuBtnClasses} onClick={this.toggleMenu}>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                </div>
-                <div className={(this.state.isMenuVisible) ? 'Menu visible' : 'Menu'}>
-
-                </div>
-            </div>
+            <View
+                {...this.state}
+                menuClasses={menuClasses}
+                menuBtnClasses={menuBtnClasses}
+                toggleMenu={this.toggleMenu}
+            >
+            </View>
         )
     }
 }

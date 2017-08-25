@@ -57,7 +57,11 @@ let common = {
             {from: resolve(Dir.src, 'humans.txt')},
             {from: resolve(Dir.src, 'robots.txt')},
             {from: resolve(Dir.src, '.htaccess')}
-        ])
+        ]),
+        new ProvidePlugin({
+            sanitizeHTML: 'sanitize-html',
+            moment: 'moment'
+        })
     ],
     resolve: {
         modules: [

@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { PUBLIC_PATH } from '../../../config.js'
 
-import Menu from './Menu.jsx'
+import Menu from './Menu/index.jsx'
 import NoMatch from './NoMatch.jsx'
 import Footer from './Footer.jsx'
-import Home from './Home.jsx'
+import Home from './Home/index.jsx'
 
 class App extends Component {
     render() {
