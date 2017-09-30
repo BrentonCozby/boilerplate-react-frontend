@@ -1,7 +1,6 @@
 import { resolve } from 'path'
 import {
     DefinePlugin,
-    NoEmitOnErrorsPlugin,
     ProvidePlugin
 } from 'webpack'
 import merge from 'webpack-merge'
@@ -71,7 +70,7 @@ let common = {
     }
 }
 
-let config;
+let config
 
 if(env === 'dev') {
     config = merge(common, devConfig)

@@ -1,9 +1,7 @@
 import {
-    HashedModuleIdsPlugin,
     optimize
 } from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import WebpackChunkHash from "webpack-chunk-hash"
 import ResourceHintsPlugin from 'resource-hints-webpack-plugin'
 import FaviconsPlugin from 'favicons-webpack-plugin'
 import { resolve } from 'path'
