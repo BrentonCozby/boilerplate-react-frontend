@@ -7,7 +7,7 @@ import merge from 'webpack-merge'
 import HtmlPlugin from 'html-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 
-import { Dir, PUBLIC_PATH, SITE_TITLE, DESCRIPTION, SITE_URL } from '../config.js'
+import { Dir, PP, SITE_TITLE, DESCRIPTION, SITE_URL } from '../config.js'
 import devConfig from './dev.js'
 import prodConfig from './prod.js'
 
@@ -17,7 +17,7 @@ const env = (TARGET === 'dev') ? 'dev' : 'prod'
 let common = {
     output: {
         path: Dir.dist,
-        publicPath: PUBLIC_PATH
+        publicPath: PP
     },
     module: {
         rules: [

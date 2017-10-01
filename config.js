@@ -1,8 +1,10 @@
 import { resolve } from 'path'
 
 export const DEV_PATH = __dirname
-export const PUBLIC_PATH = '/'
-
+// PP (public path) must begin and end with '/' unless it is just '/'
+export const PP = process.env.NODE_ENV === 'production'
+    ? '/'
+    : '/'
 export const SITE_TITLE = 'React Frontend Boilerplate'
 export const SITE_NAME = 'ejs-sass-static-boilerplate'
 export const DESCRIPTION = 'Boilerplate for a frontend react project'
