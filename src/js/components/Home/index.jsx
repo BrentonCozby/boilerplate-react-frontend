@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { setActiveThing } from '../../actions/index.js'
+import { setActiveThing } from '../../actions/home.js'
 import View from './view.jsx'
 
 class Home extends Component {
@@ -12,7 +12,7 @@ class Home extends Component {
     }
 
     componentWillMount() {
-        this.props.setActiveThing('the things is this')
+        this.props.setActiveThing('foooobarrrrrr')
     }
 
     componentDidMount() {
@@ -29,11 +29,23 @@ class Home extends Component {
         clearInterval(this.state.timer)
     }
 
+    handleSetActiveThingSubmit = (event) => {
+        event.preventDefault()
+
+        const inputElement = event.currentTarget.elements['set-active-thing-input']
+        const newValue = inputElement.value
+
+        this.props.setActiveThing(newValue)
+
+        inputElement.value = ''
+    }
+
     render() {
         return (
             <View
                 currentTime={this.state.currentTime}
                 activeThing={this.props.activeThing}
+                handleSetActiveThingSubmit={this.handleSetActiveThingSubmit}
             ></View>
         )
     }
