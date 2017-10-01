@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default ({
     toggleMenu,
@@ -15,7 +16,7 @@ export default ({
                 <span className="bar"></span>
             </div>
             <div className={menuClasses}>
-
+                <Link onClick={toggleMenu} to={PP} className="Menu-item">Home</Link>
             </div>
         </div>
     )

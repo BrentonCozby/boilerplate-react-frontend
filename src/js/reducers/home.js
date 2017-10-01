@@ -4,7 +4,7 @@ const INITAL_STATE = {
 
 export default function(state = INITAL_STATE, action) {
     switch(action.type) {
-        case 'GET_ONE_THING':
+        case 'SET_ACTIVE_THING':
             return {...state, active: action.payload}
         default:
             return state

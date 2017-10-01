@@ -73,7 +73,7 @@ export default {
         ]
     },
     plugins: [
-	new FaviconsPlugin({
+        new FaviconsPlugin({
             logo: resolve(Dir.images, 'react-logo.png'),
             background: '#333',
             title: SITE_TITLE,

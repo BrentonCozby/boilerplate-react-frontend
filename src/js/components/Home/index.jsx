@@ -1,44 +1,53 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { getOneThing } from '../../actions/index.js'
+import { setActiveThing } from '../../actions/index.js'
 import View from './view.jsx'
 
 class Home extends Component {
 
     state = {
-        currentTime: null
+        currentTime: moment().format('MMMM Do YYYY, h:mm:ss a'),
+        timer: null
     }
 
     componentWillMount() {
-        this.props.getOneThing('the things is this')
+        this.props.setActiveThing('the things is this')
     }
 
     componentDidMount() {
-        const _home = this
-        setInterval(function() {
-            _home.setState({
-                currentTime: moment().format('MMMM Do YYYY, h:mm:ss a')
-            })
-        }, 1000)
+        this.setState({
+            timer: setInterval(() => {
+                this.setState({
+                    currentTime: moment().format('MMMM Do YYYY, h:mm:ss a')
+                })
+            }, 1000)
+        })
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.state.timer)
     }
 
     render() {
         return (
-            <View {...this.state} {...this.props}></View>
+            <View
+                currentTime={this.state.currentTime}
+                activeThing={this.props.activeThing}
+            ></View>
         )
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        activeThing: state.things.active
+        activeThing: state.home.active
     }
 }
 
 export default connect(
     mapStateToProps,
     {
-        getOneThing
+        setActiveThing
     }
 )(Home)

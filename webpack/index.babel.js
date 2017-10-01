@@ -49,8 +49,9 @@ let common = {
         }),
         new DefinePlugin({
             'process.env': {
-               'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-            }
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            },
+            PP: JSON.stringify(PP)
         }),
         new CopyPlugin([
             {from: resolve(Dir.src, 'humans.txt')},

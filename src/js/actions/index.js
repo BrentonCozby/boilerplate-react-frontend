@@ -1,8 +1,8 @@
-export function getOneThing(thing) {
+export function setActiveThing(thing) {
     return dispatch => {
         setTimeout(function() {
             dispatch({
-                type: 'GET_ONE_THING',
+                type: 'SET_ACTIVE_THING',
                 payload: thing
             })
         }, 100)
