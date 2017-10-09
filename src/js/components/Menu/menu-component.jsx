@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import classnames from 'classnames'
 import { Link } from 'react-router-dom'
-import View from './view.jsx'
+import PropTypes from 'prop-types'
 
 class Menu extends Component {
 
     static contextTypes = {
-        router: React.PropTypes.object
+        router: PropTypes.object
     }
 
     state = {
@@ -28,26 +28,28 @@ class Menu extends Component {
             'visible': this.state.isMenuVisible
         })
         return (
-            <View
-                {...this.state}
-                menuClasses={menuClasses}
-                menuBtnClasses={menuBtnClasses}
-                toggleMenu={this.toggleMenu}
-            >
-            </View>
+            <div>
+                <div className={menuBtnClasses} onClick={this.toggleMenu}>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                </div>
+                <div className={menuClasses}>
+                    <Link onClick={this.toggleMenu} to={PP} className="Menu-item">Home</Link>
+                </div>
+            </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => { // eslint-disable-line no-unused-vars
     return {
 
     }
 }
 
-export default connect(
-    mapStateToProps,
-    {
+const actions = {
 
-    }
-)(Menu)
+}
+
+export default connect(mapStateToProps, actions)(Menu)

@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import reduxPromise from 'redux-promise'
 import thunk from 'redux-thunk'
 
-import rootReducer from './reducers'
+import rootReducer from './actions-and-reducers/root-reducer.js'
 
 const composeEnhancers =
     typeof window === 'object' &&

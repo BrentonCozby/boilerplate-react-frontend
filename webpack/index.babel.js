@@ -1,8 +1,5 @@
 import { resolve } from 'path'
-import {
-    DefinePlugin,
-    ProvidePlugin
-} from 'webpack'
+import { DefinePlugin } from 'webpack'
 import merge from 'webpack-merge'
 import HtmlPlugin from 'html-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
@@ -57,11 +54,7 @@ let common = {
             {from: resolve(Dir.src, 'humans.txt')},
             {from: resolve(Dir.src, 'robots.txt')},
             {from: resolve(Dir.src, '.htaccess')}
-        ]),
-        new ProvidePlugin({
-            sanitizeHTML: 'sanitize-html',
-            moment: 'moment'
-        })
+        ])
     ],
     resolve: {
         modules: [
