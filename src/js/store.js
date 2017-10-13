@@ -20,8 +20,8 @@ export default function configStore(initialState) {
     const store = createStore(rootReducer, initialState, enhancer)
 
     if (module.hot) {
-        module.hot.accept('./reducers', () => {
-            const nextRootReducer = require('./reducers/index.js').default
+        module.hot.accept('./actions-and-reducers/root-reducer.js', () => {
+            const nextRootReducer = require('./actions-and-reducers/root-reducer.js').default
             store.replaceReducer(nextRootReducer)
         })
     }
