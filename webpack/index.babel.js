@@ -40,13 +40,23 @@ let common = {
         new HtmlPlugin({
             filename: 'index.html',
             template: resolve(config.Dir.views, 'pages', 'index.pug'),
-            ...config
+            ...config,
+            env: process.env.NODE_ENV
         }),
         new DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
             },
-            PP: JSON.stringify(config.PP)
+            PP: JSON.stringify(config.PP),
+            SITE_TITLE: JSON.stringify(config.SITE_TITLE),
+            SITE_NAME: JSON.stringify(config.SITE_NAME),
+            DESCRIPTION: JSON.stringify(config.DESCRIPTION),
+            SITE_URL: JSON.stringify(config.SITE_URL),
+            SITE_IMAGE: JSON.stringify(config.SITE_IMAGE),
+            DEVELOPER_NAME: JSON.stringify(config.DEVELOPER_NAME),
+            DEVELOPER_URL: JSON.stringify(config.DEVELOPER_URL),
+            GOOGLE_ANALYTICS_ID: JSON.stringify(config.GOOGLE_ANALYTICS_ID),
+            DEV_PATH: JSON.stringify(config.DEV_PATH)
         }),
         new CopyPlugin([
             {from: config.Dir.static, to: config.Dir.dist}

@@ -10,6 +10,16 @@
         "!**/node_modules/**"
     ],
     "globals": {
-        "PP": ""
+        "Dir": "",
+        "PP": "",
+        "SITE_TITLE": "",
+        "SITE_NAME": "",
+        "DESCRIPTION": "",
+        "SITE_URL": "",
+        "SITE_IMAGE": "",
+        "DEVELOPER_NAME": "",
+        "DEVELOPER_URL": "",
+        "GOOGLE_ANALYTICS_ID": "",
+        "DEV_PATH": ""
     }
 }
