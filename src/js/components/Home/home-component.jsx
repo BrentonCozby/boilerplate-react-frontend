@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { format as formatDate } from 'date-fns'
 import { setActiveThing } from '../../actions-and-reducers/home/home-actions.js'
-import computerMouseImg from '../../../../assets/images/computer-mouse.jpg'
+import computerMouseImg from '../../../static/images/computer-mouse.jpg'
 import PropTypes from 'prop-types'
 
 class Home extends Component {

@@ -22,7 +22,7 @@ export default {
         ],
         bundle: [
             'babel-polyfill',
-            resolve(Dir.src, 'js', 'index.jsx')
+            resolve(Dir.js, 'index.jsx')
         ]
     },
     output: {
