@@ -6,7 +6,7 @@ mixin makeHead(title, description)
     title #{title || htmlWebpackPlugin.options.SITE_TITLE}
     meta(name='description', content= description || htmlWebpackPlugin.options.DESCRIPTION)
     meta(property='og:url', content= htmlWebpackPlugin.options.SITE_URL)
-    meta(property='og:site_name', content= htmlWebpackPlugin.options.SITE_NAME)
+    meta(property='og:site_name', content= htmlWebpackPlugin.options.SITE_TITLE)
     meta(property='og:type', content='website')
     meta(property='og:title', content= title || htmlWebpackPlugin.options.SITE_TITLE)
     meta(property='og:description', content= description || htmlWebpackPlugin.options.DESCRIPTION)
