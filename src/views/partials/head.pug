@@ -6,7 +6,7 @@ mixin makeHead(title, description)
     title #{title || htmlWebpackPlugin.options.SITE_TITLE}
     meta(name='description', content= description || htmlWebpackPlugin.options.DESCRIPTION)
     meta(property='og:url', content= htmlWebpackPlugin.options.SITE_URL)
-    meta(property='og:site_name', content= htmlWebpackPlugin.options.SITE_URL)
+    meta(property='og:site_name', content= htmlWebpackPlugin.options.SITE_NAME)
     meta(property='og:type', content='website')
     meta(property='og:title', content= title || htmlWebpackPlugin.options.SITE_TITLE)
     meta(property='og:description', content= description || htmlWebpackPlugin.options.DESCRIPTION)
@@ -16,6 +16,7 @@ mixin makeHead(title, description)
     meta(name='twitter:image', content='')
     meta(name='twitter:image:alt', content='')
     meta(name='twitter:site', content= htmlWebpackPlugin.options.SITE_URL)
+    link(rel='canonical', href= htmlWebpackPlugin.options.SITE_URL)
 
     //- vendor files
     link(rel="stylesheet", href= htmlWebpackPlugin.options.PP + 'vendor/html5boilerplate.css')
