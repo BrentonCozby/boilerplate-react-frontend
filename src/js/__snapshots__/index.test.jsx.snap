@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app-component renders App with router and store without crashing 1`] = `
+<div
+  className="App"
+>
+  <div>
+    <div
+      className="menu-button"
+      onClick={[Function]}
+    >
+      <span
+        className="bar"
+      />
+      <span
+        className="bar"
+      />
+      <span
+        className="bar"
+      />
+    </div>
+    <div
+      className="Menu"
+    >
+      <a
+        className="Menu-item"
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+    </div>
+  </div>
+  <div
+    className="NoMatch"
+  >
+    <h1>
+      Page not found
+    </h1>
+  </div>
+  <footer
+    className="Footer"
+  >
+    <p
+      className="copyright"
+    >
+      © 
+      2017
+      . Brenton Cozby. View more projects at 
+      <a
+        href="https://brentoncozby.com"
+      >
+        brentoncozby.com
+      </a>
+      .
+    </p>
+  </footer>
+</div>
+`;

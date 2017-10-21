@@ -9,6 +9,7 @@
         "**src/js/actions-and-reducers/**/*.{js,jsx}",
         "!**/node_modules/**"
     ],
+    "coverageReporters": ["lcov", "json"],
     "globals": {
         "Dir": "",
         "PP": "",
