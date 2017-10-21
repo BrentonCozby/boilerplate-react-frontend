@@ -3,8 +3,8 @@ import renderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import configStore from './store.js'
-import App from './components/app-component.jsx'
+import configStore from '../src/js/store.js'
+import App from '../src/js/components/app-component.jsx'
 
 describe('app-component', () => {
     it('renders App with router and store without crashing', () => {
