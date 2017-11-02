@@ -21,7 +21,8 @@
     "plugins": [
         "react",
         "babel",
-        "jsx-a11y"
+        "jsx-a11y",
+        "import"
     ],
     "rules": {
         "indent": [
