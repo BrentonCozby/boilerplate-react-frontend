@@ -8,7 +8,7 @@
         "serviceworker": true,
         "jest": true
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "extends": ["airbnb"],
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
@@ -20,7 +20,9 @@
     },
     "plugins": [
         "react",
-        "babel"
+        "babel",
+        "jsx-a11y",
+        "import"
     ],
     "rules": {
         "indent": [
