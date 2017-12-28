@@ -44,7 +44,8 @@
         ],
         "no-case-declarations": "off",
         "no-console": "off",
-        "no-fallthrough": "off"
+        "no-fallthrough": "off",
+        "arrow-parens": "off"
     },
     "globals": {
         "PP": false,
