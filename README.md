@@ -1,4 +1,5 @@
 # Boilerplate for a frontend React application
+[![CircleCI](https://circleci.com/gh/BrentonCozby/boilerplate-react-frontend.svg?style=svg)](https://circleci.com/gh/BrentonCozby/boilerplate-react-frontend)
 
 ### Setup
 Provide configuration in the ```config.js``` file.
