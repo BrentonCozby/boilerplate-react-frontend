@@ -3,6 +3,6 @@
 ### Setup
 Provide configuration in the ```config.js``` file.
 
-Start the app in development mode: ```yarn dev```
+Start the app in development mode: ```npm run dev```
 
-Build for production: ```yarn prod```
+Build for production: ```npm run prod```
