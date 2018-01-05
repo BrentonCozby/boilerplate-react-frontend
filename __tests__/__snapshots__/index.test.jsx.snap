@@ -45,7 +45,7 @@ exports[`app-component renders App with router and store without crashing 1`] = 
       className="copyright"
     >
       © 
-      2017
+      2018
       . Brenton Cozby. View more projects at 
       <a
         href="https://brentoncozby.com"
