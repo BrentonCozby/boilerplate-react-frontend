@@ -66,7 +66,20 @@ let common = {
         modules: [
             config.Dir.src,
             'node_modules'
-        ]
+        ],
+        alias: {
+            'actions-and-reducers': resolve(config.Dir.js, 'actions-and-reducers'),
+            components: resolve(config.Dir.js, 'components'),
+            dist: config.Dir.dist,
+            src: config.Dir.src,
+            css: config.Dir.css,
+            js: config.Dir.js,
+            static: config.Dir.static,
+            images: config.Dir.images,
+            views: config.Dir.views,
+            pages: config.Dir.pages,
+            partials: config.Dir.partials,
+        }
     }
 }
 

@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { PP } from '../../../config.js'
 
-import Menu from './Menu/menu-component.jsx'
-import NoMatch from './no-match-component.jsx'
-import Footer from './footer-component.jsx'
-import Home from './Home/home-component.jsx'
-import Users from './Users/users-component.jsx'
-import User from './User/user-component.jsx'
+import Menu from 'components/Menu/menu-component.jsx'
+import NoMatch from 'components/no-match-component.jsx'
+import Footer from 'components/footer-component.jsx'
+import Home from 'components/Home/home-component.jsx'
+import Users from 'components/Users/users-component.jsx'
+import User from 'components/User/user-component.jsx'
 
 class App extends Component {
     render() {

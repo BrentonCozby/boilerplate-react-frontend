@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setActiveUser } from '../../actions-and-reducers/users/users-actions.js'
+import { setActiveUser } from 'actions-and-reducers/users/users-actions.js'
 import PropTypes from 'prop-types'
 
 class User extends Component {
