@@ -93,10 +93,11 @@ export default {
         new ExtractTextPlugin('css/style.[chunkhash].css'),
         new optimize.CommonsChunkPlugin({
             name: 'vendor',
-            minChunks: 2
+            minChunks: Infinity
         }),
         new optimize.CommonsChunkPlugin({
-            name: 'manifest'
+            name: 'manifest',
+            minChunks: Infinity
         }),
         new ResourceHintsPlugin()
     ]
